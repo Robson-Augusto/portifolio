@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Portifólio</title>
+    <meta name="description"
+        content="Portfolio of Artur Rodrigues — Software Engineer. Projects in React/Next.js, .NET, Python, AI (RAG), and mobile apps." />
+    <meta property="og:title" content="Artur Rodrigues — Software Engineer" />
+    <meta property="og:description" content="Projects in React/Next.js, .NET, Python, AI (RAG), and mobile apps." />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/images/favicon.png" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script src="./assets/js/tailwind-config.js"></script>
+
+    <!-- External Libraries CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <!-- Lucide Icons -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="antialiased bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100">
+    <!-- Decorative background -->
+    <div aria-hidden="true" class="fixed inset-0 -z-10">
+        <div
+            class="absolute -top-40 -right-32 h-[28rem] w-[28rem] rounded-full blur-3xl opacity-40 dark:opacity-30 bg-gradient-to-tr from-brand-400 via-teal-400 to-cyan-400">
+        </div>
+        <div
+            class="absolute -bottom-48 -left-20 h-[30rem] w-[30rem] rounded-full blur-3xl opacity-40 dark:opacity-30 bg-gradient-to-tr from-emerald-400 via-brand-500 to-teal-600">
+        </div>
+        <div class="absolute inset-0 bg-grid opacity-[0.15] dark:opacity-[0.08]"></div>
+    </div>
+
+    <!-- Header Component -->
+    <header class="sticky top-0 z-50">
+        <nav class="border-b border-white/20 dark:border-white/10 bg-gradient-to-r from-indigo-900" style="background-color: rgb(49, 45, 56); ">
+            <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
+                <a href="#home" class="hover:text-violet-950">Bem Vindo ao meu Portifólio </a>
+                <div class="hidden md:flex items-center gap-4 text-sm font-medium">
+                    <a href="#home" class="hover:text-violet-950" data-i18n="nav.home">Home</a>
+                    <a href="#skills" class="hover:text-violet-950" data-i18n="nav.skills">Skills</a>
+                    <a href="#certificates" class="hover:text-violet-950" data-i18n="nav.certificates">Formação</a>
+                    <a href="#events" class="hover:text-violet-950" data-i18n="nav.events">Eventos</a>
+                    <a href="#experience" class="hover:text-violet-950" data-i18n="nav.experience">Experiencia</a>
+                    <div class="inline-flex items-center gap-2">
+                        <label for="langSelect" class="sr-only">Language</label>
+                        <select id="langSelect"
+                            class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 appearance-none">
+                            <!-- <option value="en">EN</option> -->
+                            <option value="pt">PT</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="md:hidden flex items-center gap-3">
+                    <button id="mobileToggle"
+                        class="p-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-brand-500 transition">
+                        <i data-lucide="menu" class="h-5 w-5"></i>
+                        <span class="sr-only">Open menu</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden px-6 pb-6 md:hidden">
+                <div class="flex flex-col gap-3 text-sm">
+                    <a href="#values" class="py-2" data-i18n="nav.values">Values</a>
+                    <a href="#skills" class="py-2" data-i18n="nav.skills">Skills</a>
+                    <a href="#projects" class="py-2" data-i18n="nav.projects">Projects</a>
+                    <a href="#experience" class="py-2" data-i18n="nav.experience">Experience</a>
+                    <a href="#contact" class="py-2" data-i18n="nav.contact">Contact</a>
+                    <div class="flex items-center gap-2">
+                        <select id="langSelectMobile"
+                            class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 appearance-none">
+                            <option value="en">EN</option>
+                            <option value="pt">PT</option>
+                        </select>
+                        <button id="themeToggleMobile"
+                            class="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-brand-500 transition">
+                            <i data-lucide="sun" class="h-4 w-4 hidden dark:inline"></i>
+                            <i data-lucide="moon" class="h-4 w-4 dark:hidden"></i>
+                            <span class="sr-only">Toggle theme</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative">
+        <div class="max-w-7xl mx-auto px-6 md:py-32">
+            <div class="grid md:grid-cols-10 items-center">
+                <div class="md:col-span-4">
+                        <div>
+                            <img alt="Image" src="profile.png" width="65%"/>
+                            <div class="profile-shine"></div>
+                        </div>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="https://www.linkedin.com/in/robson-augusto-dos-santos-644094197/">
+                                LinkedIn <svg stroke-width="1" height="20" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="group-hover:fill-[#171543] fill-white duration-300"
+                                        d="M20,2H4C2.9,2,2,2.9,2,4v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M8.5,19H6V10h2.5V19z M7.3,9 h-0.1C6.4,9,6,8.6,6,8.1V7.9c0-0.5,0.4-0.9,0.9-0.9h0.1C7.6,7,8,7.4,8,7.9v0.1C8,8.6,7.6,9,7.3,9z M19,19h-2.5v-4.9 c0-1.2-0.4-2-1.4-2c-0.8,0-1.3,0.6-1.5,1.2h-0.1V19H10V10h2.3v1.3h0C12.7,10.7,14,9.9,15.5,9.9c2.1,0,3.5,1.4,3.5,3.8V19z"
+                                        fill="#FFFFFF"></path>
+                                </svg>
+                            </a>
+                        </span>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative inline-flex px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="https://github.com/Robson-Augusto">
+                                GitHub <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="1" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="w-5 hover:scale-125 duration-200 hover:stroke-blue-500"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                        </span>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="cv.pdf">
+                                Currículo <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="size-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                                </svg>
+                            </a>
+                        </span>
+                    </button>
+                </div>
+                <div class="md:col-span-5">
+                     <div class="mt-8 flex flex-wrap items-center gap-4"></div>
+                        <p class="uppercase tracking-widest text-xs text-gray-500 dark:text-gray-400 mb-3"
+                            data-i18n="hero.tagline">Portfolio 2025</p>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+                            <span data-i18n="hero.heading_pre">Olá, </span>
+                        </h1>
+                        <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl" data-i18n="hero.body">
+                            Meu nome é <strong>Robson Augusto</strong>, atuo como <strong>Desenvolvedor de Software</strong> na empresa DL
+                            Eletrônicos. Sou <strong>Técnico em Eletrônica</strong> com formação em Automação Industrial pela Escola Técnica Francisco Moreira da
+                            Costa e graduando em <strong>Sistemas de Informação</strong> pela Uninter (5° Período).
+                            <br><br>
+                            Possuo mais de <strong>3 anos de experiência prática</strong> em tecnologia, trabalhando com as principais
+                            ferramentas e metodologias do mercado. Minhas principais habilidades incluem: desenvolvimento em
+                            <strong>Java</strong> e <strong>Angular</strong>, programação em <strong>ADVPL</strong> para o ERP Protheus,
+                            aplicação de <strong>boas práticas de desenvolvimento de software</strong>, versionamento de código e fundamentos em
+                            <strong>Cibersegurança</strong>.
+                            <br><br>
+                            Além da experiência prática, também possuo <strong>certificações em cursos reconhecidos</strong>, que reforçam meu
+                            compromisso com o aprendizado contínuo e a evolução profissional.
+                        </p>
+
+                     <div class="mt-8 flex flex-wrap items-center gap-4"></div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-8 border-y border-gray-100 dark:border-gray-900 items-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="projects.title">Minhas Skills</h2>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            <div class="w-30 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                <div class="w-24 h-24 bg-violet-500 rounded-full absolute -right-5 -top-7">
+                    <p class="absolute bottom-6 left-7 text-white text-2xl">1</p>
+                </div>
+                <div class="fill-violet-500 w-12">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor"
+                        class="size-16">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
+                    </svg>
+
+                </div>
+                <h1 class="font-bold text-xl">Desenvolvimento Back-end</h1>
+                <p class="text-sm text-zinc-400 leading-6">
+                    Programação Java + Spring Boot para construção de API's, aplicações Web e microservicos.
+                </p>  
+            </div>
+            <div class="w-30 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                <div class="w-24 h-24 bg-violet-500 rounded-full absolute -right-5 -top-7">
+                    <p class="absolute bottom-6 left-7 text-white text-2xl">2</p>
+                </div>
+                <div class="fill-violet-500 w-12">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor"
+                    class="size-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                </svg>
+                
+
+                </div>
+                <h1 class="font-bold text-xl">ERP Protheus</h1>
+                <br>
+                <p class="text-sm text-zinc-400 leading-6">
+                    Desenvolvimento em ADVPL/TL++, customizações, relatórios, integração com APIs/WebServices e suporte técnico.
+                </p>
+            </div>
+            <div class="w-30 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                <div class="w-24 h-24 bg-violet-500 rounded-full absolute -right-5 -top-7">
+                    <p class="absolute bottom-6 left-7 text-white text-2xl">3</p>
+                </div>
+                <div class="fill-violet-500 w-12">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor"
+                    class="size-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                </svg>
+                </div>
+                <h1 class="font-bold text-xl">Banco de dados SQL</h1>
+                <p class="text-sm text-zinc-400 leading-6">
+                    Experiencia com banco de dados como PostgreSQL, MySQL, Consultas SQL, manutenção, otimização de queries e manipulação de dados.
+                </p>
+            </div>
+            <div class="w-30 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                <div class="w-24 h-24 bg-violet-400 rounded-full absolute -right-5 -top-7">
+                    <p class="absolute bottom-6 left-7 text-white text-2xl">4</p>
+                </div>
+                <div class="fill-violet-500 w-12">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor"
+                    class="size-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
+
+                </div>
+                <h1 class="font-bold text-xl">Versionamento de código</h1>
+                <p class="text-sm text-zinc-400 leading-6">
+                    Experiência em versionamento de código (GitHub/GitLab), seguindo boas práticas de commits, branches e colaboração em equipe.
+                </p>
+            </div>
+            <div class="w-30 shadow-[0px_0px_15px_rgba(0,0,0,0.09)] p-9 space-y-3 relative overflow-hidden transform transition-transform duration-200 hover:scale-105">
+                <div class="w-24 h-24 bg-violet-400 rounded-full absolute -right-5 -top-7">
+                    <p class="absolute bottom-6 left-7 text-white text-2xl">5</p>
+                </div>
+                <div class="fill-violet-500 w-12">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor"
+                    class="size-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
+                </svg>
+                </div>
+                <h1 class="font-bold text-xl">Desenvolvimento Front-end</h1>
+                <p class="text-sm text-zinc-400 leading-6">
+                    Desenvolvimento front-end utilizando tecnólogias como Angular, Tailwind e Bootstrap para construção de paginas e aplicações web.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="certificates" class="py-8 border-t border-gray-100 dark:border-gray-900">
+        <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl " data-i18n="projects.title">Alguns Certificados</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 gap-8">
+            <div id="project-grid" class="mt-5 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"><!-- Cards injected by JS -->
+                <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full mx-auto">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">Alura</span>
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                            Principais fundamentos Java , Programação oritentada a objetos, HTML5, CSS3 e Javascript.
+                        </p>
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://drive.google.com/file/d/1Qtup3OQOycBZAalDNz2MJcYRjmXAH3Dw/view?usp=sharing">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">Rocketseat</span>
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                           Desenvolvimento Java com Maven, Spring Boot. Itengração com HSQL, JPA e uso de DTOs.
+                        </p>
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://app.rocketseat.com.br/certificates/06c5ba20-53d3-43a5-90df-33959028137b">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">ETE FMC</span> 
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                           Técnico em Eletrônica: Análise de circuitos Eletrônicos, instalações eletricas e controle de automação. 
+                        </p>
+                        
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://drive.google.com/file/d/1GholVvLMnmfKEHQpCPYUURXqgSZHKnf2/view?usp=sharing">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">Udemy</span> 
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                           Curso de desenvolvedor Full Stack Java com Spring Boot e Angular.
+                        </p>
+                        
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://www.udemy.com/certificate/UC-b1ea7c66-6161-4156-b973-664eae9e2f22/">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+                 <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">Cisco</span> 
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                           Certificação em fundamentos de Cibersegurança, práticas de segurança da Informação.
+                        </p>
+                        
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://www.credly.com/badges/5c2fd5b9-9f05-47a3-90ba-6f2f12dded0d/linked_in_profile">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+                 <div class="w-96 h-64 duration-100 group overflow-hidden relative rounded text-neutral-50 p-4 flex flex-col justify-between">
+                    <div class="absolute blur duration-100 group-hover:blur-none w-72 h-72 rounded-full group-hover:translate-x-12 group-hover:translate-y-12 bg-violet-900 right-1 -bottom-24">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-12 h-12 rounded-full group-hover:translate-x-12 group-hover:translate-y-2 bg-gray-900 right-12 bottom-12">
+                    </div>
+                    <div class="absolute blur duration-100 group-hover:blur-none w-36 h-36 rounded-full group-hover:translate-x-12 group-hover:-translate-y-12 bg-gray-900 right-1 -top-12">
+                    </div>
+                    <div
+                        class="absolute blur duration-100 group-hover:blur-none w-24 h-24 bg-violet-500 rounded-full group-hover:-translate-x-12">
+                    </div>
+                    <div class="z-10 flex flex-col justify-evenly w-full h-full">
+                        <div style="display: inline-flex; align-items: center;" class="gap-4">
+        
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="0.5"
+                                stroke="currentColor" class="size-16">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                            </svg>
+                            <span class="text-2xl font-bold">Fundação Bradesco</span> 
+                        </div>
+                        <p class="text-sm leading-6 min-h-[60px]">
+                           Linguagem de programação Java Avançado
+                        </p>
+                        
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                            <a target="_blank" href="https://drive.google.com/file/d/1qYUvXNYnuLyIEcWd2RzsTIa9o4fbOeXH/view?usp=sharing">Certificado</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+          <!-- Values Section -->
+    <section id="events" >
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="projects.title">Eventos Tech</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 gap-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ">
+            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-700 shadow-md justify-between">
+                <div
+                    class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div>
+                            <img style="height: 170px;"  alt="Image" src="https://inatel.br/noticias/images/e6d274e4085d4ce36bf105fc1541330d3f6ad1ead02eb43ba6a8d107968f1051_1201.jpg" />
+                            <div class="profile-shine"></div>
+                        </div>
+                </div>
+                <div class="p-6">
+                    <h5 style="color: white;"
+                        class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        Inatel Bootcamp
+                    </h5>
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                       Evento tecnologico de workshops realizado pelo Inatel.
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="https://inatel.br/noticias/inatel-bootcamp-contara-com-workshops-voltados-para-o-mercado-de-trabalho">
+                                Leia mais
+                            </a>
+                        </span>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="./assets/5be3272e8c8cb.pdf">
+                                Certificado
+                            </a>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-700 shadow-md justify-between">
+                <div
+                    class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div>
+                            <img style="height: 170px;"  alt="Image" src="https://cromatek.com.br/wp-content/uploads/2020/01/FIEE-2025-cromatek.jpg" />
+                            <div class="profile-shine"></div>
+                        </div>
+                </div>
+                <div class="p-6">
+                    <h5 style="color: white;"
+                        class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        FIEE
+                    </h5>
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                       A FIEE é a uma feira de negócios no Brasil que apresenta soluções e tendências em instalações elétricas e eletrônicas.
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="https://www.fiee.com.br/pt-br/credenciamento.html?gad_source=1&gad_campaignid=22694938450&gbraid=0AAAAAC0O4H4N-qeBXo6ikzuE6uI0QKCm2&gclid=Cj0KCQjwzt_FBhCEARIsAJGFWVkISGPrGiXyPAdwzhj6YAyQlSkvv3Bj_qrGJmU8kYQqBEC3bSOIeY4aArfFEALw_wcB">
+                                Leia mais
+                            </a>
+                        </span>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="./assets/1690228539124.jpeg">
+                                Certificado
+                            </a>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-700 shadow-md justify-between">
+                <div
+                    class="relative mx-4 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600">
+                    <div>
+                            <img style="height: 170px;"  alt="Image" src="https://s2-g1.glbimg.com/6k0LIOosjs2h0lDQ4opb2aLcQjo=/1700x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/l/S/QV6wmwQdWA8Yc9odqp4g/hacktown.jpg" />
+                            <div class="profile-shine"></div>
+                        </div>
+                </div>
+                <div class="p-6">
+                    <h5 style="color: white;"
+                        class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        HackTown
+                    </h5>
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                       Um dos maiores festivais de inovação, criatividade, cultura e tecnologia da América Latina
+                    </p>
+                </div>
+                <div class="p-6 pt-0">
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="https://hacktown.com.br/">
+                                Leia mais
+                            </a>
+                        </span>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                        <span
+                            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
+                            <a class="flex gap-2" target="_blank" href="./assets/68a46b8a23e7f.pdf">
+                                Certificado
+                            </a>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="projects.title">Experiência profissional</h2>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 gap-8">
+            <div class="grid mb-8 border border-gray-200 rounded-lg shadow-xs dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
+                <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+                    <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Desenvolvedor</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px]">Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.</p>
+                    </blockquote>
+                    <figcaption class="flex items-center justify-center ">
+                        <img class="rounded-full w-9 h-9"
+                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/512px-Xiaomi_logo_%282021-%29.svg.png"
+                            alt="profile picture">
+                        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                            <div>Projeto Xiaomi Brasil</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 ">Atual</div>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
+                    <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Programador de S.i
+                        </h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px]">Implementar, corrigir e testar recursos na plataforma de gestão de energia elétrica, utilizando Java com Spring Boot e AngularJs como principais tecnologias.
+                            <br>
+                            <button>
+                                     <a class="transform transition-transform duration-200 hover:scale-105" href="https://drive.google.com/file/d/1kLYoUXqlUQff81nFP1U25IxG2nIhAyYL/view?usp=sharing">Carta de Recomendação</a>
+                            </button>
+                        </p>
+
+                    </blockquote>
+                    <figcaption class="flex items-center justify-center ">
+                        <img class="rounded-full w-9 h-9"
+                            src="https://cckautomacao.com.br/wp-content/uploads/2023/02/cropped-CCK-Logo-Quadrado.png"
+                            
+                            alt="profile picture">
+                        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                            <div>CCK Automação</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">2.8 anos</div>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+                    <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Técnico em Eletrônica</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px] ">Responsável por realizar manutenção em dispositivos eletrônicos, utilizando ferramentas
+                            para identificar e solucionar problemas, montagem, testes produtos da empresa.</p>
+                    </blockquote>
+                    <figcaption class="flex items-center justify-center ">
+                        <img class="rounded-full w-9 h-9"
+                            src="https://cckautomacao.com.br/wp-content/uploads/2023/02/cropped-CCK-Logo-Quadrado.png"
+                            alt="profile picture">
+                        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                            <div>CCK Automação</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 ">1.3 anos</div>
+                        </div>
+                    </figcaption>
+                </figure>
+                <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+                    <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Auxiliar Técnico</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px] ">Montagem, instalação e manutenção corretiva e preventiva de equipamentos e circuitos eletrônicos, diagnósticos e reparos de sistemas complexos.</p>
+                    </blockquote>
+                    <figcaption class="flex items-center justify-center ">
+                        <img class="rounded-full w-9 h-9"
+                            src="https://cckautomacao.com.br/wp-content/uploads/2023/02/cropped-CCK-Logo-Quadrado.png"
+                            alt="profile picture">
+                        <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
+                            <div>CCK Automação</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 ">1 anos</div>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="py-20 border-t border-gray-100 dark:border-gray-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold" data-i18n="contact.title">Contact</h2>
+            <p class="mt-4 text-gray-600 dark:text-gray-300" data-i18n="contact.subtitle">Open to internships, junior
+                roles, and freelance work. Let's build something great.</p>
+
+            <div class="grid sm:grid-cols-2 gap-6 mt-8">
+                <a href="mailto:artur190503@outlook.com"
+                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
+                    data-aos="fade-up">
+                    <i data-lucide="mail" class="h-5 w-5"></i>
+                    <span data-i18n="contact.email">Email</span>
+                </a>
+                <a href="https://www.linkedin.com/in/arturrsa19/" target="_blank" rel="noopener"
+                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
+                    data-aos="fade-up" data-aos-delay="50">
+                    <i data-lucide="linkedin" class="h-5 w-5"></i>
+                    <span data-i18n="contact.linkedin">LinkedIn</span>
+                </a>
+                <a href="https://github.com/ArturRSA19" target="_blank" rel="noopener"
+                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <i data-lucide="github" class="h-5 w-5"></i>
+                    <span data-i18n="contact.github">GitHub</span>
+                </a>
+                <a href="https://t.me/ArturRSA19" target="_blank" rel="noopener"
+                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
+                    data-aos="fade-up" data-aos-delay="150">
+                    <i data-lucide="message-circle" class="h-5 w-5"></i>
+                    <span data-i18n="contact.telegram">Telegram</span>
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-gray-500">© <span id="year"></span> <span>Robson Augusto dos Santos.</span> <span
+                    data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+            <div class="flex items-center gap-3 text-sm text-gray-500">
+                <a href="#home" class="hover:text-brand-500 inline-flex items-center gap-1"><i data-lucide="arrow-up"
+                        class="h-4 w-4"></i> <span data-i18n="footer.back_to_top">Voltar ao topo</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Libraries JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
