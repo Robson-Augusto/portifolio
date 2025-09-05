@@ -56,7 +56,7 @@
     <header class="sticky top-0 z-50">
         <nav class="border-b border-white/20 dark:border-white/10 bg-gradient-to-r from-indigo-900" style="background-color: rgb(49, 45, 56); ">
             <div class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between">
-                <a href="#home" class="hover:text-violet-950">Bem Vindo ao meu Portifólio </a>
+                <a href="#home" class="hover:text-violet-950" data-i18n="nav.welcome">Bem Vindo ao meu Portifólio </a>
                 <div class="hidden md:flex items-center gap-4 text-sm font-medium">
                     <a href="#home" class="hover:text-violet-950" data-i18n="nav.home">Home</a>
                     <a href="#skills" class="hover:text-violet-950" data-i18n="nav.skills">Skills</a>
@@ -67,7 +67,7 @@
                         <label for="langSelect" class="sr-only">Language</label>
                         <select id="langSelect"
                             class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 appearance-none">
-                            <!-- <option value="en">EN</option> -->
+                            <option value="en">EN</option>
                             <option value="pt">PT</option>
                         </select>
                     </div>
@@ -157,10 +157,10 @@
                         <p class="uppercase tracking-widest text-xs text-gray-500 dark:text-gray-400 mb-3"
                             data-i18n="hero.tagline">Portfolio 2025</p>
                         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
-                            <span data-i18n="hero.heading_pre">Olá, </span>
+                            <span data-i18n="hero.hello">Olá, </span>
                         </h1>
                         <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl" data-i18n="hero.body">
-                            Meu nome é <strong>Robson Augusto</strong>, atuo como <strong>Desenvolvedor de Software</strong> na empresa DL
+                            <!-- Meu nome é <strong>Robson Augusto</strong>, atuo como <strong>Desenvolvedor de Software</strong> na empresa DL
                             Eletrônicos. Sou <strong>Técnico em Eletrônica</strong> com formação em Automação Industrial pela Escola Técnica Francisco Moreira da
                             Costa e graduando em <strong>Sistemas de Informação</strong> pela Uninter (5° Período).
                             <br><br>
@@ -171,7 +171,7 @@
                             <strong>Cibersegurança</strong>.
                             <br><br>
                             Além da experiência prática, também possuo <strong>certificações em cursos reconhecidos</strong>, que reforçam meu
-                            compromisso com o aprendizado contínuo e a evolução profissional.
+                            compromisso com o aprendizado contínuo e a evolução profissional. -->
                         </p>
 
                      <div class="mt-8 flex flex-wrap items-center gap-4"></div>
@@ -198,8 +198,8 @@
                     </svg>
 
                 </div>
-                <h1 class="font-bold text-xl">Desenvolvimento Back-end</h1>
-                <p class="text-sm text-zinc-400 leading-6">
+                <h1 class="font-bold text-xl" data-i18n="skills.ocuppation1">Desenvolvimento Back-end</h1>
+                <p class="text-sm text-zinc-400 leading-6" data-i18n="skills.description1">
                     Programação Java + Spring Boot para construção de API's, aplicações Web e microservicos.
                 </p>  
             </div>
@@ -216,9 +216,9 @@
                 
 
                 </div>
-                <h1 class="font-bold text-xl">ERP Protheus</h1>
+                <h1 class="font-bold text-xl" data-i18n="skills.ocuppation2">ERP Protheus</h1>
                 <br>
-                <p class="text-sm text-zinc-400 leading-6">
+                <p class="text-sm text-zinc-400 leading-6" data-i18n="skills.description2">
                     Desenvolvimento em ADVPL/TL++, customizações, relatórios, integração com APIs/WebServices e suporte técnico.
                 </p>
             </div>
@@ -234,8 +234,8 @@
                         d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                 </svg>
                 </div>
-                <h1 class="font-bold text-xl">Banco de dados SQL</h1>
-                <p class="text-sm text-zinc-400 leading-6">
+                <h1 class="font-bold text-xl" data-i18n="skills.ocuppation3">Banco de dados SQL</h1>
+                <p class="text-sm text-zinc-400 leading-6" data-i18n="skills.description3">
                     Experiencia com banco de dados como PostgreSQL, MySQL, Consultas SQL, manutenção, otimização de queries e manipulação de dados.
                 </p>
             </div>
@@ -252,8 +252,8 @@
                 </svg>
 
                 </div>
-                <h1 class="font-bold text-xl">Versionamento de código</h1>
-                <p class="text-sm text-zinc-400 leading-6">
+                <h1 class="font-bold text-xl" data-i18n="skills.ocuppation4">Versionamento de código</h1>
+                <p class="text-sm text-zinc-400 leading-6" data-i18n="skills.description3">
                     Experiência em versionamento de código (GitHub/GitLab), seguindo boas práticas de commits, branches e colaboração em equipe.
                 </p>
             </div>
@@ -268,8 +268,8 @@
                         d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
                 </svg>
                 </div>
-                <h1 class="font-bold text-xl">Desenvolvimento Front-end</h1>
-                <p class="text-sm text-zinc-400 leading-6">
+                <h1 class="font-bold text-xl" data-i18n="skills.ocuppation5">Desenvolvimento Front-end</h1>
+                <p class="text-sm text-zinc-400 leading-6" data-i18n="skills.description5">
                     Desenvolvimento front-end utilizando tecnólogias como Angular, Tailwind e Bootstrap para construção de paginas e aplicações web.
                 </p>
             </div>
@@ -280,7 +280,7 @@
     <!-- Projects Section -->
     <section id="certificates" class="py-8 border-t border-gray-100 dark:border-gray-900">
         <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl " data-i18n="projects.title">Alguns Certificados</h2>
+            <h2 class="text-3xl md:text-4xl " data-i18n="certificatesTitle">Alguns Certificados</h2>
         </div>
         <div class="max-w-7xl mx-auto px-6 gap-8">
             <div id="project-grid" class="mt-5 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"><!-- Cards injected by JS -->
@@ -304,7 +304,7 @@
                             </svg>
                             <span class="text-2xl font-bold">Alura</span>
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc1">
                             Principais fundamentos Java , Programação oritentada a objetos, HTML5, CSS3 e Javascript.
                         </p>
                         <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
@@ -332,7 +332,7 @@
                             </svg>
                             <span class="text-2xl font-bold">Rocketseat</span>
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc2">
                            Desenvolvimento Java com Maven, Spring Boot. Itengração com HSQL, JPA e uso de DTOs.
                         </p>
                         <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
@@ -360,7 +360,7 @@
                             </svg>
                             <span class="text-2xl font-bold">ETE FMC</span> 
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc3">
                            Técnico em Eletrônica: Análise de circuitos Eletrônicos, instalações eletricas e controle de automação. 
                         </p>
                         
@@ -389,7 +389,7 @@
                             </svg>
                             <span class="text-2xl font-bold">Udemy</span> 
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc4">
                            Curso de desenvolvedor Full Stack Java com Spring Boot e Angular.
                         </p>
                         
@@ -418,7 +418,7 @@
                             </svg>
                             <span class="text-2xl font-bold">Cisco</span> 
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc5">
                            Certificação em fundamentos de Cibersegurança, práticas de segurança da Informação.
                         </p>
                         
@@ -445,9 +445,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
                             </svg>
-                            <span class="text-2xl font-bold">Fundação Bradesco</span> 
+                            <span class="text-2xl font-bold" data-i18n="Bradesco">Fundação Bradesco</span> 
                         </div>
-                        <p class="text-sm leading-6 min-h-[60px]">
+                        <p class="text-sm leading-6 min-h-[60px]" data-i18n="certificates.desc6">
                            Linguagem de programação Java Avançado
                         </p>
                         
@@ -463,7 +463,7 @@
           <!-- Values Section -->
     <section id="events" >
         <div class="max-w-7xl mx-auto px-6 py-8">
-            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="projects.title">Eventos Tech</h2>
+            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="events">Eventos Tech</h2>
         </div>
         <div class="max-w-7xl mx-auto px-6 gap-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ">
             <div class="relative flex w-80 flex-col rounded-xl bg-gray-800 bg-clip-border text-gray-700 shadow-md justify-between">
@@ -479,7 +479,7 @@
                         class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Inatel Bootcamp
                     </h5>
-                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased" data-i18n="events.desc1">
                        Evento tecnologico de workshops realizado pelo Inatel.
                     </p>
                 </div>
@@ -517,7 +517,7 @@
                         class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         FIEE
                     </h5>
-                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased" data-i18n="events.desc2">
                        A FIEE é a uma feira de negócios no Brasil que apresenta soluções e tendências em instalações elétricas e eletrônicas.
                     </p>
                 </div>
@@ -555,7 +555,7 @@
                         class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         HackTown
                     </h5>
-                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                    <p style="color: white;" class="block font-sans text-base font-light leading-relaxed text-inherit antialiased" data-i18n="events.desc3">
                        Um dos maiores festivais de inovação, criatividade, cultura e tecnologia da América Latina
                     </p>
                 </div>
@@ -586,14 +586,19 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="projects.title">Experiência profissional</h2>
+            <h2 class="text-3xl md:text-4xl mb-5 mt-5" data-i18n="experience">Experiência profissional</h2>
         </div>
         <div class="max-w-7xl mx-auto px-6 gap-8">
             <div class="grid mb-8 border border-gray-200 rounded-lg shadow-xs dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
                 <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
                     <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
                         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Desenvolvedor</h3>
-                        <p class="my-4 text-sm leading-6 min-h-[60px]">Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.</p>
+                        <p class="my-4 text-sm leading-6 min-h-[60px]">Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.
+                         <br>
+                            <button class="font-light font-medium transform transition-transform duration-200 hover:scale-105">
+                                     <a target="_blank" href="https://www.infojobs.com.br/empresa-projeto-xiaomi-brasil__-163574.aspx">✨ Ler sobre ✨</a>
+                            </button>
+                        </p>
                     </blockquote>
                     <figcaption class="flex items-center justify-center ">
                         <img class="rounded-full w-9 h-9"
@@ -611,8 +616,8 @@
                         </h3>
                         <p class="my-4 text-sm leading-6 min-h-[60px]">Implementar, corrigir e testar recursos na plataforma de gestão de energia elétrica, utilizando Java com Spring Boot e AngularJs como principais tecnologias.
                             <br>
-                            <button>
-                                     <a class="transform transition-transform duration-200 hover:scale-105" href="https://drive.google.com/file/d/1kLYoUXqlUQff81nFP1U25IxG2nIhAyYL/view?usp=sharing">Carta de Recomendação</a>
+                            <button class="font-light font-medium transform transition-transform duration-200 hover:scale-105">
+                                     <a target="_blank" href="https://drive.google.com/file/d/1kLYoUXqlUQff81nFP1U25IxG2nIhAyYL/view?usp=sharing">✨ Clique para ver a Carta de Recomendação ✨</a>
                             </button>
                         </p>
 
@@ -662,43 +667,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <!-- <section id="contact" class="py-20 border-t border-gray-100 dark:border-gray-900">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold" data-i18n="contact.title">Contact</h2>
-            <p class="mt-4 text-gray-600 dark:text-gray-300" data-i18n="contact.subtitle">Open to internships, junior
-                roles, and freelance work. Let's build something great.</p>
-
-            <div class="grid sm:grid-cols-2 gap-6 mt-8">
-                <a href="mailto:artur190503@outlook.com"
-                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
-                    data-aos="fade-up">
-                    <i data-lucide="mail" class="h-5 w-5"></i>
-                    <span data-i18n="contact.email">Email</span>
-                </a>
-                <a href="https://www.linkedin.com/in/arturrsa19/" target="_blank" rel="noopener"
-                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
-                    data-aos="fade-up" data-aos-delay="50">
-                    <i data-lucide="linkedin" class="h-5 w-5"></i>
-                    <span data-i18n="contact.linkedin">LinkedIn</span>
-                </a>
-                <a href="https://github.com/ArturRSA19" target="_blank" rel="noopener"
-                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <i data-lucide="github" class="h-5 w-5"></i>
-                    <span data-i18n="contact.github">GitHub</span>
-                </a>
-                <a href="https://t.me/ArturRSA19" target="_blank" rel="noopener"
-                    class="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 glass flex items-center gap-3 hover:border-brand-500"
-                    data-aos="fade-up" data-aos-delay="150">
-                    <i data-lucide="message-circle" class="h-5 w-5"></i>
-                    <span data-i18n="contact.telegram">Telegram</span>
-                </a>
-            </div>
-        </div>
-    </section> -->
-
     <!-- Footer -->
     <footer class="py-10">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -720,6 +688,7 @@
     <script src="./assets/js/data.js"></script>
     <script src="./assets/js/i18n.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="assets/js/translations.js"></script>
 </body>
 
 </html>
