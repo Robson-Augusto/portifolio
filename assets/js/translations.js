@@ -46,7 +46,28 @@ const translations = {
       "certificates.desc6": "Advanced Java programming language",
       "events":"Events Tech",
       "Bradesco":"Bradesco Fundation",
-      "experience":"Experiência Profissional"
+      "experience":"Experiência Profissional",
+      "certificate":"Certificate",
+      "events.desc1":"Technological workshop event held by Inatel.",
+      "events.desc2":"FIEE is a trade fair in Brazil that presents solutions and trends in electrical and electronic installations.",
+      "events.desc3":"One of the largest festivals of innovation, creativity, culture and technology in Latin America",
+      "read.more":"Read more",
+      "xp.1":"Developer",
+      "xp.2":"S.i Programmer",
+      "xp.3":"Electronics Technician",
+      "xp.4":"Technical Assistant",
+      "read.about" :"✨ Read about ✨",
+      "xp.1.1":"Create, customize and maintain systems and functionalities within TOTVS' Protheus ERP, using the ADVPL programming language.",
+      "xp.2.1":"Implement, correct and test resources in the electrical energy management platform, using Java with Spring Boot and AngularJs as main technologies.",
+      "xp.3.1":"Responsible for performing maintenance on electronic devices, using tools to identify and solve problems, assembly, and testing of the company's products.",
+      "xp.4.1":"Assembly, installation and corrective and preventive maintenance of electronic equipment and circuits, diagnostics and repairs of complex systems.",
+      "xp.1.time":"Current",
+    "xp.2.time":"2.8 Years",
+    "xp.3.time":"1.3 Years",
+    "xp.4.time":"1 Year",
+    "footer.rights":"All rights reserved.",
+    "footer.back_to_top":"Back to Top"
+     
   },
   pt: {
     "nav.welcome": "Bem Vindo ao meu Portifólio",
@@ -96,7 +117,29 @@ const translations = {
     "certificates.desc6": "Linguagem de programação Java Avançado",
     "events":"Eventos Tech",
     "Bradesco":"Fundação Bradesco",
-    "experience":"Professional Expirience"
+    "experience":"Professional Expirience",
+    "certificate":"Certificado",
+    "events.desc1":"Evento tecnologico de workshops realizado pelo Inatel.",
+    "events.desc2":"A FIEE é a uma feira de negócios no Brasil que apresenta soluções e tendências em instalações elétricas e eletrônicas.",
+    "events.desc3":"Um dos maiores festivais de inovação, criatividade, cultura e tecnologia da América Latina",
+    "read.more":"Leia mais",
+    "xp.1":"Desenvolvedor",
+    "xp.2":"Programador de S.i",
+    "xp.3":"Técnico em eletrônica",
+    "xp.4":"Auxiliar Técnico",
+    "read.about" :"✨ Ler sobre ✨",
+    "xp.1.1":"Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.",
+    "xp.2.1":"Implementar, corrigir e testar recursos na plataforma de gestão de energia elétrica, utilizando Java com Spring Boot e AngularJs como principais tecnologias.",
+    "xp.3.1":"Responsável por realizar manutenção em dispositivos eletrônicos, utilizando ferramentas para identificar e solucionar problemas, montagem, testes produtos da empresa.",
+    "xp.4.1":"Montagem, instalação e manutenção corretiva e preventiva de equipamentos e circuitos eletrônicos, diagnósticos e reparos de sistemas complexos.",
+     "xp.1.time":"Atual",
+      "xp.2.time":"2.8 Anos",
+      "xp.3.time":"1.3 Anos",
+      "xp.4.time":"1 Ano",
+      "footer.rights":"Todos os direitos reservados.",
+      "footer.back_to_top":"Voltar ao Topo"
+
+
   }
 };
 

@@ -71,14 +71,16 @@
                             <option value="pt">PT</option>
                         </select>
                     </div>
-                    
                 </div>
                 <div class="md:hidden flex items-center gap-3">
-                    <button id="mobileToggle"
-                        class="p-2 rounded-lg border border-gray-200 dark:border-gray-800 hover:border-brand-500 transition">
-                        <i data-lucide="menu" class="h-5 w-5"></i>
-                        <span class="sr-only">Open menu</span>
-                    </button>
+                    <!-- <button id="mobileToggle" class="p-2 rounded-lg bg-gradient-to-r text-black">
+                        Menu
+                    </button> -->
+                    <select id="langSelect"
+                            class="px-3 py-2 rounded-lg border border-gray-200 dark:border-gray-800 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 appearance-none">
+                            <option value="en">EN</option>
+                            <option value="pt">PT</option>
+                        </select>
                 </div>
             </div>
             <!-- Mobile menu -->
@@ -364,7 +366,7 @@
                            Técnico em Eletrônica: Análise de circuitos Eletrônicos, instalações eletricas e controle de automação. 
                         </p>
                         
-                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
+                        <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3" data-i18n="certificate">
                             <a target="_blank" href="https://drive.google.com/file/d/1GholVvLMnmfKEHQpCPYUURXqgSZHKnf2/view?usp=sharing">Certificado</a>
                         </button>
                     </div>
@@ -394,7 +396,7 @@
                         </p>
                         
                         <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
-                            <a target="_blank" href="https://www.udemy.com/certificate/UC-b1ea7c66-6161-4156-b973-664eae9e2f22/">Certificado</a>
+                            <a target="_blank" href="https://www.udemy.com/certificate/UC-b1ea7c66-6161-4156-b973-664eae9e2f22/" data-i18n="certificate">Certificado</a>
                         </button>
                     </div>
                 </div>
@@ -423,7 +425,7 @@
                         </p>
                         
                         <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
-                            <a target="_blank" href="https://www.credly.com/badges/5c2fd5b9-9f05-47a3-90ba-6f2f12dded0d/linked_in_profile">Certificado</a>
+                            <a target="_blank" href="https://www.credly.com/badges/5c2fd5b9-9f05-47a3-90ba-6f2f12dded0d/linked_in_profile" data-i18n="certificate">Certificado</a>
                         </button>
                     </div>
                 </div>
@@ -452,7 +454,7 @@
                         </p>
                         
                         <button class="hover:bg-neutral-200 bg-neutral-50 rounded text-neutral-800 w-full p-3">
-                            <a target="_blank" href="https://drive.google.com/file/d/1qYUvXNYnuLyIEcWd2RzsTIa9o4fbOeXH/view?usp=sharing">Certificado</a>
+                            <a target="_blank" href="https://drive.google.com/file/d/1qYUvXNYnuLyIEcWd2RzsTIa9o4fbOeXH/view?usp=sharing" data-i18n="certificate">Certificado</a>
                         </button>
                     </div>
                 </div>
@@ -488,7 +490,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="https://inatel.br/noticias/inatel-bootcamp-contara-com-workshops-voltados-para-o-mercado-de-trabalho">
+                            <a data-i18n="read.more" class="flex gap-2" target="_blank" href="https://inatel.br/noticias/inatel-bootcamp-contara-com-workshops-voltados-para-o-mercado-de-trabalho">
                                 Leia mais
                             </a>
                         </span>
@@ -497,7 +499,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="./assets/5be3272e8c8cb.pdf">
+                            <a class="flex gap-2" target="_blank" href="./assets/5be3272e8c8cb.pdf" data-i18n="certificate">
                                 Certificado
                             </a>
                         </span>
@@ -526,7 +528,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="https://www.fiee.com.br/pt-br/credenciamento.html?gad_source=1&gad_campaignid=22694938450&gbraid=0AAAAAC0O4H4N-qeBXo6ikzuE6uI0QKCm2&gclid=Cj0KCQjwzt_FBhCEARIsAJGFWVkISGPrGiXyPAdwzhj6YAyQlSkvv3Bj_qrGJmU8kYQqBEC3bSOIeY4aArfFEALw_wcB">
+                            <a data-i18n="read.more" class="flex gap-2" target="_blank" href="https://www.fiee.com.br/pt-br/credenciamento.html?gad_source=1&gad_campaignid=22694938450&gbraid=0AAAAAC0O4H4N-qeBXo6ikzuE6uI0QKCm2&gclid=Cj0KCQjwzt_FBhCEARIsAJGFWVkISGPrGiXyPAdwzhj6YAyQlSkvv3Bj_qrGJmU8kYQqBEC3bSOIeY4aArfFEALw_wcB">
                                 Leia mais
                             </a>
                         </span>
@@ -535,7 +537,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="./assets/1690228539124.jpeg">
+                            <a class="flex gap-2" target="_blank" href="./assets/1690228539124.jpeg" data-i18n="certificate">
                                 Certificado
                             </a>
                         </span>
@@ -564,7 +566,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="https://hacktown.com.br/">
+                            <a data-i18n="read.more" class="flex gap-2" target="_blank" href="https://hacktown.com.br/">
                                 Leia mais
                             </a>
                         </span>
@@ -573,7 +575,7 @@
                         class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         <span
                             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent">
-                            <a class="flex gap-2" target="_blank" href="./assets/68a46b8a23e7f.pdf">
+                            <a class="flex gap-2" target="_blank" href="./assets/68a46b8a23e7f.pdf" data-i18n="certificate">
                                 Certificado
                             </a>
                         </span>
@@ -592,11 +594,11 @@
             <div class="grid mb-8 border border-gray-200 rounded-lg shadow-xs dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
                 <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
                     <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Desenvolvedor</h3>
-                        <p class="my-4 text-sm leading-6 min-h-[60px]">Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="xp.1">Desenvolvedor</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px]" data-i18n="xp.1.1">Criar, customizar e manter sistemas e funcionalidades dentro do ERP Protheus da TOTVS, utilizando a linguagem de programação ADVPL.
                          <br>
                             <button class="font-light font-medium transform transition-transform duration-200 hover:scale-105">
-                                     <a target="_blank" href="https://www.infojobs.com.br/empresa-projeto-xiaomi-brasil__-163574.aspx">✨ Ler sobre ✨</a>
+                                     <a data-i18n="read.about" target="_blank" href="https://www.infojobs.com.br/empresa-projeto-xiaomi-brasil__-163574.aspx">✨ Ler sobre ✨</a>
                             </button>
                         </p>
                     </blockquote>
@@ -606,15 +608,15 @@
                             alt="profile picture">
                         <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
                             <div>Projeto Xiaomi Brasil</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400 ">Atual</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 " data-i18n="xp.1.time">Atual</div>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 md:rounded-se-lg dark:bg-gray-800 dark:border-gray-700">
                     <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Programador de S.i
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="xp.2">Programador de S.i
                         </h3>
-                        <p class="my-4 text-sm leading-6 min-h-[60px]">Implementar, corrigir e testar recursos na plataforma de gestão de energia elétrica, utilizando Java com Spring Boot e AngularJs como principais tecnologias.
+                        <p class="my-4 text-sm leading-6 min-h-[60px]" data-i18n="xp.2.1">Implementar, corrigir e testar recursos na plataforma de gestão de energia elétrica, utilizando Java com Spring Boot e AngularJs como principais tecnologias.
                             <br>
                             <button class="font-light font-medium transform transition-transform duration-200 hover:scale-105">
                                      <a target="_blank" href="https://drive.google.com/file/d/1kLYoUXqlUQff81nFP1U25IxG2nIhAyYL/view?usp=sharing">✨ Clique para ver a Carta de Recomendação ✨</a>
@@ -629,14 +631,14 @@
                             alt="profile picture">
                         <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
                             <div>CCK Automação</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400">2.8 anos</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400"  data-i18n="xp.2.time">2.8 anos</div>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
                     <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Técnico em Eletrônica</h3>
-                        <p class="my-4 text-sm leading-6 min-h-[60px] ">Responsável por realizar manutenção em dispositivos eletrônicos, utilizando ferramentas
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="xp.3">Técnico em Eletrônica</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px]" data-i18n="xp.3.1">Responsável por realizar manutenção em dispositivos eletrônicos, utilizando ferramentas
                             para identificar e solucionar problemas, montagem, testes produtos da empresa.</p>
                     </blockquote>
                     <figcaption class="flex items-center justify-center ">
@@ -645,14 +647,14 @@
                             alt="profile picture">
                         <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
                             <div>CCK Automação</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400 ">1.3 anos</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 "  data-i18n="xp.3.time">1.3 anos</div>
                         </div>
                     </figcaption>
                 </figure>
                 <figure class="flex flex-col items-center justify-between p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
                     <blockquote class="max-w-2xl mx-auto text-gray-500 dark:text-gray-400">
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Auxiliar Técnico</h3>
-                        <p class="my-4 text-sm leading-6 min-h-[60px] ">Montagem, instalação e manutenção corretiva e preventiva de equipamentos e circuitos eletrônicos, diagnósticos e reparos de sistemas complexos.</p>
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white" data-i18n="xp.4">Auxiliar Técnico</h3>
+                        <p class="my-4 text-sm leading-6 min-h-[60px] " data-i18n="xp.4.1">Montagem, instalação e manutenção corretiva e preventiva de equipamentos e circuitos eletrônicos, diagnósticos e reparos de sistemas complexos.</p>
                     </blockquote>
                     <figcaption class="flex items-center justify-center ">
                         <img class="rounded-full w-9 h-9"
@@ -660,7 +662,7 @@
                             alt="profile picture">
                         <div class="space-y-0.5 font-medium dark:text-white text-left rtl:text-right ms-3">
                             <div>CCK Automação</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400 ">1 anos</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 "  data-i18n="xp.4.time">1 anos</div>
                         </div>
                     </figcaption>
                 </figure>
